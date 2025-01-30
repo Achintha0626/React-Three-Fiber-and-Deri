@@ -1,8 +1,13 @@
+import { useEffect, useRef } from "react";
+
 export function Box(props) {
-  console.log(props);
-  
+  const ref = useRef();
+  useEffect(() => {
+    console.log(ref);
+  });
+
   return (
-    <mesh {...props} >  //these three dot helps to pass props without mentioniting each of them one by one
+    <mesh {...props} ref={ref}>
       <boxGeometry />
       <meshBasicMaterial color={0x00ff00} wireframe />
     </mesh>
